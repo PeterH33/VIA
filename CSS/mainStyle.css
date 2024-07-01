@@ -1,8 +1,15 @@
+body {
+    font-family: 'Inter', sans-serif;
+    padding: 20px;
+    margin: 0;
+}
+
 .small-link {
     background-color: black;
     color: white;
     padding: 10px;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 .small-link:hover {
@@ -10,6 +17,7 @@
     color: white;
     padding: 10px;
     border-radius: 8px;
+    text-decoration: none;
 }
 
 .wide-link {
