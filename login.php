@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <title>VIA - login</title>
+    <link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
 <body>
     <header>
