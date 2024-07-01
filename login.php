@@ -21,6 +21,8 @@
                 <input type="text" name="password" id="password" required>
                 <input class="small-link wide-link" type="submit" value="Submit">
             </form>
+            <h3>--or--</h3>
+            <a class="small-link wide-link" href="createAccount.php">Create Account</a>
         </div>
         <!-- Vertical stack of Login and sub heading -->
 
