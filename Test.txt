@@ -1,1 +1,5 @@
-This is just a test file for token.
+
+Images licences found at
+Main page https://pixabay.com/illustrations/business-office-meeting-people-8676529/ Licence free under pixabay https://pixabay.com/service/license-summary/ on 20240701
+
+Font Inter found at https://fonts.google.com/specimen/Inter/about Licence Open Font Licence https://openfontlicense.org/ on 20240701

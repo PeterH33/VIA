@@ -3,6 +3,7 @@ body {
     padding: 20px;
     margin: 0;
 }
+
 h1 {
     font-size: 64px;
     font-weight: bold;
@@ -12,6 +13,8 @@ h2 {
     font-size: 40px;
     font-weight: 600;
 }
+
+/* h3 will be used as our subheadding font */
 h3 {
     font-size: 24px;
     color: #828282;
@@ -48,6 +51,10 @@ h3 {
     justify-content: space-between;
 }
 
+.index-VIA {
+    margin: 0px;
+}
+
 .index-mainImage {
     margin-top: 5em;
     margin-bottom: 5em;
@@ -59,4 +66,11 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.index-testimonial {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: left;
 }
