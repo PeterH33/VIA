@@ -19,8 +19,8 @@
             <h3>Enter your login credentials</h3>
             <!-- Form with two fields -->
             <form action="authLogin.php" method="post">
-                <input type="text" name="userName" id="userName" required>
-                <input type="text" name="password" id="password" required>
+                <input type="text" name="userName" id="userName" placeholder="Your User Name" required>
+                <input type="password" name="password" id="password" placeholder="Your Password" required>
                 <!-- button login -->
                 <input class="small-link wide-link" type="submit" value="Submit">
             </form>
