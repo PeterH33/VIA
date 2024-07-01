@@ -29,6 +29,11 @@ body {
     max-height: 100%;
 }
 
+.index-header {
+    display: flex;
+    justify-content: space-between;
+}
+
 .index-main {
     display: flex;
     flex-direction: column;
