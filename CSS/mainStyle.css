@@ -34,6 +34,11 @@ body {
     justify-content: space-between;
 }
 
+.index-mainImage {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
 .index-main {
     display: flex;
     flex-direction: column;
