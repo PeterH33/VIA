@@ -6,13 +6,13 @@
     <title>VIA - login</title>
     <link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
-<body class="login-body">
+<body>
     <header>
         <!-- site logo on the left -->
         <div class="site-logo">logo</div>
     </header>
 
-    <main>
+    <main class="login-main">
         <div class="login-container">
             <!-- Vertical stack of Login and sub heading -->
             <h2>Login</h2>

@@ -88,7 +88,7 @@ input[type=text] {
     justify-content: left;
 }
 
-.login-body {
+.login-main {
     display: flex;
     flex-direction: column;
     align-items: center;
