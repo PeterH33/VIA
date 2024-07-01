@@ -23,3 +23,8 @@ body {
 .wide-link {
     width: 100%;
 }
+
+.index-main {
+    align-items: center;
+    justify-content: center;
+}
