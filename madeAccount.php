@@ -9,22 +9,18 @@ function sanitizeString($var)
 }
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
     
-    $mysqli = new mysqli("127.0.0.1", "viaDemon", "pword", "viaDB");
-
-    if ($mysqli->connect_error){
-        die("Connection failed: madeAccount " . $mysqli->connect_error);
-    } else {
+    require 'dbConn.php';
         //TODO: Add logic to check for the managers name
         $managerName = sanitizeString($_POST['muName']);
         $userName = sanitizeString($_POST['userName']);
         $password = sanitizeString($_POST['password']);
         $pwHash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sqlStatement = $mysql->prepare("INSERT INTO Users(userName, password) VALUES (?,?)");
+        $sqlStatement = $mysqli->prepare("INSERT INTO Users(userName, password) VALUES (?,?)");
         $sqlStatement->bind_param('ss', $userName, $pwHash);
         $sqlStatement->execute();
         $sqlStatement->close();
-    }
+    
     $mysqli->close();
 
 }
