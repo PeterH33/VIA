@@ -27,7 +27,7 @@
             <!-- div for -------or---------- -->
             <h3>--or--</h3>
             <!-- button to create account -->
-            <a class="small-link wide-link" href="createAccount.php">Create Account</a>
+            <a class="small-link wide-link" href="createAccount.html">Create Account</a>
         </div>
 
 
