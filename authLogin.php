@@ -9,14 +9,14 @@ session_start();
         $password = sanitizeString($_POST['password']);
 
         //fetch data on user
-        $stmt = $mysqli->prepare('SELECT userName, password, isManager, accessApproved FROM users WHERE username = ?');
+        $stmt = $mysqli->prepare('SELECT userId, userName, password, isManager, accessApproved FROM users WHERE username = ?');
         $stmt->bind_param('s', $userName);
         $stmt->execute();
         $stmt->store_result();
 
         //Check user exists
         if ($stmt->num_rows > 0){
-            $stmt->bind_result($userName, $hashedPW, $isManager, $accessApproved);
+            $stmt->bind_result($userId, $userName, $hashedPW, $isManager, $accessApproved);
             $stmt->fetch();
             
             //check if user has accessApproved
@@ -29,6 +29,7 @@ session_start();
             //Check the pw if they exist and are approved
             if (password_verify($password, $hashedPW)){
                 $_SESSION['userName'] = $userName;
+                $_SESSION['userId'] = $userId;
                 //I am not certain about the manager tag being handled by the session, maybe?
                 $_SESSION['isManager'] = $isManager;
                 $stmt->close();
