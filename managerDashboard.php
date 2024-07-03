@@ -17,6 +17,7 @@ if (!$_SESSION['isManager']){
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Manager Dashboard</title>
     <link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
 <body>
