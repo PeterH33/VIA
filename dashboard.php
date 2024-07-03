@@ -7,7 +7,7 @@ if (!isset($_SESSION['userName'])){
     exit;
 }
 
-if (!$_SESSION['isManager']){
+if ($_SESSION['isManager']){
     header('Location: managerDashboard.php');
     exit;
 } else {
