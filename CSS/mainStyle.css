@@ -108,9 +108,39 @@ input[type=text] , input[type=password]{
 }
 
 .dash-sidebar{
+    width: 250px;
+    background-color: #fff;
+    height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+}
 
+.dash-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dash-menu li {
+    padding: 10px 20px;
+}
+
+.dash-menu li a {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.dash-menu li a:hover{
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .dash-icon{
-
+    width: 24px;
+    height: 24px;
+    margin-right: 15px;
 }
