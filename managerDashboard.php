@@ -34,27 +34,35 @@ if (!$_SESSION['isManager']){
     </header>    
 
     <!-- Menu -->
-    <div class="dash-menuContainer">
-        <nav class="dash-sidebar">
-            <ul class="dash-menu">
-                <li><a href="managerDashboard.php"><img src="ICONS/home.svg" alt="Home Icon" class="dash-icon">VIA Round</a></li>
-                <li><a href="managerTaskList.php"><img src="ICONS/plus.svg" alt="Task Icon" class="dash-icon"> Task List</a></li>
-                <li><a href="managerWorkers.php"><img src="ICONS/person.svg" alt="Worker Icon" class="dash-icon">Workers</a></li>
-                <li><a href="managerSettings.php"><img src="ICONS/gear.svg" alt="Settings Icon" class="dash-icon">Settings</a></li>
-            </ul>
-        </nav>
-    </div>
-
-    <main>
-    <!-- Next round button and time remaining -->
-        <div class="dash-header">
-            <a class="small-link" href="">Next VIA Round</a>
-            <div>Time remaining in round: time</div>
+    <div class="dash-container">
+        <div class="dash-menuContainer">
+            <nav class="dash-sidebar">
+                <ul class="dash-menu">
+                    <li><a href="managerDashboard.php"><img src="ICONS/home.svg" alt="Home Icon" class="dash-icon">VIA Round</a></li>
+                    <li><a href="managerTaskList.php"><img src="ICONS/plus.svg" alt="Task Icon" class="dash-icon"> Task List</a></li>
+                    <li><a href="managerWorkers.php"><img src="ICONS/person.svg" alt="Worker Icon" class="dash-icon">Workers</a></li>
+                    <li><a href="managerSettings.php"><img src="ICONS/gear.svg" alt="Settings Icon" class="dash-icon">Settings</a></li>
+                </ul>
+            </nav>
         </div>
-    <!-- loadup remaining Tasks -->
 
-    <!-- Loadup current bids -->
+        <div class="dash-mainContent">
+            <!-- Next round button and time remaining -->
+            <div class="dash-header">
+                <a class="small-link" href="">Next VIA Round</a>
+                <div>Time remaining in round: time</div>
+            </div>
+            <!-- loadup remaining Tasks -->
+            <div>
+                <h2>Remaining Tasks</h2>
+                <!-- Table code here -->
+            </div>
+            <!-- Loadup current bids -->
+            <div>
+                <h2>Current Bids</h2>
+            </div>
 
-    </main>
+        </div>
+    </div>
 </body>
 </html>
