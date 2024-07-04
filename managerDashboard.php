@@ -103,7 +103,7 @@ require_once 'sani.php';
                 //sql for getting remaining tasks
                 $SQLString = "SELECT u.userName, t.taskName, a.bid 
                     FROM assignments a 
-                    JOIN users u ON a.userId = u.userIdWHERE 
+                    JOIN users u ON a.userId = u.userId
                     JOIN tasks t ON a.taskId = t.taskId
                     WHERE a.bid IS NOT NULL";
                 $result = $mysqli->query($SQLString);
