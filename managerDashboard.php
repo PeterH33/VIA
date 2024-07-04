@@ -97,6 +97,47 @@ require_once 'sani.php';
             <!-- Loadup current bids -->
             <div>
                 <h2>Current Bids</h2>
+                <?php
+                //establish connection
+                require 'dbDash.php';
+                //sql for getting remaining tasks
+                $SQLString = "SELECT u.userName, t.taskName, a.bid 
+                    FROM assignments a 
+                    JOIN users u ON a.userId = u.userIdWHERE 
+                    JOIN tasks t ON a.taskId = t.taskId
+                    WHERE a.bid IS NOT NULL";
+                $result = $mysqli->query($SQLString);
+                if ($result->num_rows > 0){
+                    echo "
+                    <table class='tasks-table'>
+                        <thead>
+                            <tr>
+                                <th>Task Title</th>
+                                <th>Bid</th>
+                                <th>Worker</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    ";
+                    while ($row = $result->fetch_assoc()){
+                        echo "
+                            <tr>
+                                <td>" . $row["taskName"] . "</td>
+                                <td>" . $row["bid"] . "</td>
+                                <td>" . $row["userName"] . "</td>
+                                <td>...</td>
+                            </tr>
+                        ";
+                    }
+                    echo "
+                        </tbody>
+                    </table>
+                    ";
+                } else {
+                    echo "<h3>No current bids</h3>";
+                }
+                $mysqli->close();
+                ?>
             </div>
 
         </div>
