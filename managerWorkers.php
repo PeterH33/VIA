@@ -12,6 +12,8 @@ if (!$_SESSION['isManager']){
     exit;
 }
 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -48,5 +50,6 @@ if (!$_SESSION['isManager']){
     <main>
 
     </main>
+
 </body>
 </html>
