@@ -12,6 +12,8 @@ if (!$_SESSION['isManager']){
     exit;
 }
 
+require_once 'sani.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +58,41 @@ if (!$_SESSION['isManager']){
             <div>
                 <h2>Remaining Tasks</h2>
                 <!-- Table code here -->
+                <?php
+                //establish connection
+                require 'dbDash.php';
+                //sql for getting remaining tasks
+                $SQLString = "SELECT taskName, costEstimate FROM Tasks WHERE taskIsAssigned = 0";
+                $result = $mysqli->query($SQLString);
+                if ($result->num_rows > 0){
+                    echo "
+                    <table class='tasks-table'>
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Time / Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    ";
+                    while ($row = $result->fetch_assoc()){
+                        echo "
+                            <tr>
+                                <td>" . $row["taskName"] . "</td>
+                                <td>" . $row["costEstimate"] . "</td>
+                                <td>...</td>
+                            </tr>
+                        ";
+                    }
+                    echo "
+                        </tbody>
+                    </table>
+                    ";
+                } else {
+                    echo "<h3>No unassigned tasks</h3>";
+                }
+                $mysqli-close();
+                ?>
             </div>
             <!-- Loadup current bids -->
             <div>
