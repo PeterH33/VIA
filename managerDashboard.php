@@ -91,7 +91,7 @@ require_once 'sani.php';
                 } else {
                     echo "<h3>No unassigned tasks</h3>";
                 }
-                $mysqli-close();
+                $mysqli->close();
                 ?>
             </div>
             <!-- Loadup current bids -->
