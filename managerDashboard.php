@@ -47,7 +47,10 @@ if (!$_SESSION['isManager']){
 
     <main>
     <!-- Next round button and time remaining -->
-
+        <div class="dash-header">
+            <a class="small-link" href="">Next VIA Round</a>
+            <div>Time remaining in round: time</div>
+        </div>
     <!-- loadup remaining Tasks -->
 
     <!-- Loadup current bids -->
