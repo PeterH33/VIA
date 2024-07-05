@@ -157,7 +157,15 @@ input[type=text] , input[type=password]{
 }
 
 .dash-plusButton{
+    width: 24px;
+    height: 24px;
+    text-decoration: none;
     background-color: #aaa;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px;
+    border-radius: 8px;
+}
+
+.dash-plusButton a:hover{
+    background-color: #f7f7f7;
 }
