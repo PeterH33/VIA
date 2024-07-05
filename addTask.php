@@ -17,7 +17,7 @@ require_once 'sani.php';
 //  Need to check if a post was sent, it will be sent by this page
 // If post sent, use it to insert a db item for the task
 if($_SERVER['REQUEST_METHOD'] ==='POST'){
-    require 'dbDash.php'
+    require 'dbDash.php';
 
     $taskName = sanitizeString($_POST['taskName']) ;
     $costEstimate = sanitizeString($_POST['costEstimate']) ;
