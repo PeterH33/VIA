@@ -51,7 +51,7 @@ if (!$_SESSION['isManager']){
             <div><h2>Tasks</h2></div>
             <div class="dash-header">
                 <h3>Search bar</h3>
-                <a class="dash-plusButton" href="addTask.php">+</a>
+                
             </div>
             <!-- The task table goes here -->
             <?php

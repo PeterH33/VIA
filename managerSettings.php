@@ -21,7 +21,7 @@ if (!$_SESSION['isManager']){
     <link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
 <body>
-    <header>
+    <header class="dash-header">
         
         <!-- logo on the left -->
         <div class="site-logo">logo</div>
