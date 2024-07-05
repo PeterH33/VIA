@@ -169,3 +169,12 @@ input[type=text] , input[type=password]{
 .dash-plusButton a:hover{
     background-color: #f7f7f7;
 }
+
+.task-form{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
