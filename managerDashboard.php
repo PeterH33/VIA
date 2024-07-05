@@ -56,7 +56,7 @@ require_once 'sani.php';
             </div>
             <!-- loadup remaining Tasks -->
             <div>
-                <h2>Remaining Tasks</h2>
+                <h2>Unassigned Tasks</h2>
                 <!-- Table code here -->
                 <?php
                 //establish connection
