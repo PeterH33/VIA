@@ -29,6 +29,7 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
     $SQLString->execute();
     $SQLString->close();
     $mysqli->close();
+    echo "Task created";
 }
 ?>
 
