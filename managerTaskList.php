@@ -70,6 +70,7 @@ if (!$_SESSION['isManager']){
                                 <th>Title</th>
                                 <th>Time / Value</th>
                                 <th>Assigned Worker</th>
+                                <th>Edit Task</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -77,9 +78,9 @@ if (!$_SESSION['isManager']){
                     while ($row = $result->fetch_assoc()){
                         echo"
                             <tr>
-                                <td>" . $row["taskName"] . "</td>
-                                <td>" . $row["costEstimate"] . "</td>
-                                <td>" . $row["userName"] . "</td>
+                                <td>" . htmlspecialchars($row["taskName"]) . "</td>
+                                <td>" . htmlspecialchars($row["costEstimate"]) . "</td>
+                                <td>" . htmlspecialchars($row["userName"]) . "</td>
                                 <td>...</td>
                             </tr>
                         ";
