@@ -71,10 +71,10 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
             
             <!-- The task table goes here -->
             <form class="task-form" action="addTask.php" method="post">
-                <input type="text" name="taskName" placeholder="Task Name" required>
-                <input type="text" name="costEstimate" placeholder="Time Estimate, Priority, or Value" required>
-                <input type="text" name="description" placeholder="Description of the task and what is considered done" required>
-                <input type="text" name="details" placeholder="Aditional Details" required>
+                <input type="text" name="taskName" placeholder="Task Name" maxlength="32" required>
+                <input type="number" name="costEstimate" placeholder="Time Estimate, Priority, or Value" required>
+                <input type="text" name="description" placeholder="Description of the task and what is considered done" maxlength="600" required>
+                <input type="text" name="details" placeholder="Aditional Details" maxlength="500" required>
                 <input class="small-link" type="submit" value="Save">
             </form>
         </div>
