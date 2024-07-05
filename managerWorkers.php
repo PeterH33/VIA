@@ -12,8 +12,6 @@ if (!$_SESSION['isManager']){
     exit;
 }
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +21,7 @@ if (!$_SESSION['isManager']){
     <link rel="stylesheet" href="CSS/mainStyle.css">
 </head>
 <body>
-    <header>
+    <header class="dash-header">
         
         <!-- logo on the left -->
         <div class="site-logo">logo</div>
@@ -35,21 +33,26 @@ if (!$_SESSION['isManager']){
 
     </header>    
 
-    <!-- Menu -->
-    <div class="dash-menuContainer">
-        <nav class="dash-sidebar">
-            <ul class="dash-menu">
-                <li><a href="managerDashboard.php"><img src="ICONS/home.svg" alt="Home Icon" class="dash-icon">VIA Round</a></li>
-                <li><a href="managerTaskList.php"><img src="ICONS/plus.svg" alt="Task Icon" class="dash-icon"> Task List</a></li>
-                <li><a href="managerWorkers.php"><img src="ICONS/person.svg" alt="Worker Icon" class="dash-icon">Workers</a></li>
-                <li><a href="managerSettings.php"><img src="ICONS/gear.svg" alt="Settings Icon" class="dash-icon">Settings</a></li>
-            </ul>
-        </nav>
+    <div class="dash-container">
+        <!-- Menu -->
+        <div class="dash-menuContainer">
+            <nav class="dash-sidebar">
+                <ul class="dash-menu">
+                    <li><a href="managerDashboard.php"><img src="ICONS/home.svg" alt="Home Icon" class="dash-icon">VIA Round</a></li>
+                    <li><a href="managerTaskList.php"><img src="ICONS/plus.svg" alt="Task Icon" class="dash-icon"> Task List</a></li>
+                    <li><a href="managerWorkers.php"><img src="ICONS/person.svg" alt="Worker Icon" class="dash-icon">Workers</a></li>
+                    <li><a href="managerSettings.php"><img src="ICONS/gear.svg" alt="Settings Icon" class="dash-icon">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="dash-mainContent">
+
+        </div>
     </div>
 
     <main>
 
     </main>
-
 </body>
 </html>
