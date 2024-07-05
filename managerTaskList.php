@@ -77,9 +77,9 @@ if (!$_SESSION['isManager']){
                     while ($row = $result->fetch_assoc()){
                         echo"
                             <tr>
-                                <td>" . $row["taskName"] . "</td
-                                <td>" . $row["costEstimate"] . "</td
-                                <td>" . $row["userName"] . "</td
+                                <td>" . $row["taskName"] . "</td>
+                                <td>" . $row["costEstimate"] . "</td>
+                                <td>" . $row["userName"] . "</td>
                                 <td>...</td>
                             </tr>
                         ";
