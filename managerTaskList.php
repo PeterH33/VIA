@@ -85,7 +85,7 @@ if (!$_SESSION['isManager']){
                         ";
                     }
                 } else {
-                    echo "<h3>No tasks available, use the plus button to add a task.</h3>"
+                    echo "<h3>No tasks available, use the plus button to add a task.</h3>";
                 }
                 $mysqli->close();
             ?>
