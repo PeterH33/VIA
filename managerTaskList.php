@@ -19,6 +19,8 @@ if (!$_SESSION['isManager']){
 <head>
     <title>Manager Task List</title>
     <link rel="stylesheet" href="CSS/mainStyle.css">
+    <!-- NEW CONTENT JQuery from google -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <body>
     <header class="dash-header">
@@ -51,7 +53,10 @@ if (!$_SESSION['isManager']){
             <div><h2>Tasks</h2></div>
             <div class="dash-header">
                 <h3>Search bar</h3>
-                <a class="dash-plusButton" href="addTask.php">+</a>
+                <!-- NEW CONTENT logic for button and modal sheet -->
+                <!-- <a class="dash-plusButton" href="addTask.php">+</a> -->
+                <!-- Test button -->
+                <button id="openModalBtn">Create Task</button>
             </div>
             <!-- The task table goes here -->
             <?php
@@ -93,8 +98,67 @@ if (!$_SESSION['isManager']){
         </div>
     </div>
 
-    <main>
+    <!-- Test button -->
+    <button id="openModalBtn">Create Task</button>
 
-    </main>
+    <!-- Modal Sheet NEW CONTENT Might need to be up in the above div... not sure-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <!-- This line is odd, need to understand it -->
+            <span class="close">&times;</span>
+            <form id="taskForm">
+                <input type="text" name="taskName" placeholder="Task Name" maxlength="32" required>
+                <input type="number" name="costEstimate" placeholder="Time Estimate, Priority, or Value" required>
+                <input type="text" name="description" placeholder="Description of the task and what is considered done" maxlength="600" required>
+                <input type="text" name="details" placeholder="Aditional Details" maxlength="500" required>
+                <button type="submit">Save</button>
+            </form>
+            <div id="formResponse"></div>
+        </div>
+    </div>
+    
+    <!-- This script is new and I am unused to the syntax -->
+    <script>
+        $(document).ready(function(){
+            var modal = $('#myModal');
+            var btn = $('#openModalBtn');
+            var span = $('.close');
+
+            btn.click(function() {
+                modal.show();
+            });
+
+            span.click(function() {
+                modal.hide();
+            });
+
+            $(window).click(function(event) {
+                if ($(event.target).is(modal)) {
+                    modal.hide();
+                }
+            });
+
+            $('#taskForm').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                    url: 'addTask.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $('#formResponse').html(response);
+                        $('#taskForm')[0].reset();
+                        setTimeout(function() {
+                            modal.hide();
+                            location.reload();
+                        }, 2000);
+                    },
+                    error: function() {
+                        $('#formResponse').html('Error creating task.');
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

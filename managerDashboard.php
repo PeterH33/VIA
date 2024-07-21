@@ -143,72 +143,13 @@ require_once 'sani.php';
                 ?>
             </div>
 
-            <!-- Test button -->
-            <button id="openModalBtn">Create Task</button>
-
-            <!-- Modal Sheet -->
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <!-- This line is odd, need to understand it -->
-                    <span class="close">&times;</span>
-                    <form id="taskForm">
-                        <input type="text" name="taskName" placeholder="Task Name" maxlength="32" required>
-                        <input type="number" name="costEstimate" placeholder="Time Estimate, Priority, or Value" required>
-                        <input type="text" name="description" placeholder="Description of the task and what is considered done" maxlength="600" required>
-                        <input type="text" name="details" placeholder="Aditional Details" maxlength="500" required>
-                        <button type="submit">Save</button>
-                    </form>
-                    <div id="formResponse"></div>
-                </div>
-            </div>
-
-            <!-- End new content -->
+            
+            
 
         </div>
     </div>
 
-    <!-- This script is new and I am unused to the syntax -->
-    <script>
-        $(document).ready(function(){
-            var modal = $('#myModal');
-            var btn = $('#openModalBtn');
-            var span = $('.close');
-
-            btn.click(function() {
-                modal.show();
-            });
-
-            span.click(function() {
-                modal.hide();
-            });
-
-            $(window).click(function(event) {
-                if ($(event.target).is(modal)) {
-                    modal.hide();
-                }
-            });
-
-            $('#taskForm').submit(function(event) {
-                event.preventDefault();
-                $.ajax({
-                    url: 'addTask.php',
-                    type: 'POST',
-                    data: $(this).serialize(),
-                    success: function(response) {
-                        $('#formResponse').html(response);
-                        $('#taskForm')[0].reset();
-                        setTimeout(function() {
-                            modal.hide();
-                            location.reload();
-                        }, 2000);
-                    },
-                    error: function() {
-                        $('#formResponse').html('Error creating task.');
-                    }
-                });
-            });
-        });
-    </script>
+    
 
 </body>
 </html>
