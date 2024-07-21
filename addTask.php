@@ -33,7 +33,8 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
 }
 ?>
 
-<!DOCTYPE html>
+<!-- commenting out the html changing the method to ajax -->
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>Manager Create Task</title>
@@ -42,18 +43,16 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
 <body>
     <header class="dash-header">
         
-        <!-- logo on the left -->
+        
         <div class="site-logo">logo</div>
         
-        <!-- Manager icon portrait on right next to logout button-->
-
-        <!-- Logout button on the right -->
+        
         <a class="small-link" href="logout.php">Log Out</a>
 
     </header>    
 
     <div class="dash-container">
-        <!-- Menu -->
+        
         <div class="dash-menuContainer">
             <nav class="dash-sidebar">
                 <ul class="dash-menu">
@@ -66,10 +65,10 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
         </div>
 
         <div class="dash-mainContent">
-            <!-- Search bar kind of a header and add task button -->
+            
             <div><h2>Create Task</h2></div>
             
-            <!-- The task table goes here -->
+            
             <form class="task-form" action="addTask.php" method="post">
                 <input type="text" name="taskName" placeholder="Task Name" maxlength="32" required>
                 <input type="number" name="costEstimate" placeholder="Time Estimate, Priority, or Value" required>
@@ -84,7 +83,8 @@ if($_SERVER['REQUEST_METHOD'] ==='POST'){
 
     </main>
 </body>
-</html>
+</html> -->
 
-<!-- Clean all user input before it is even sent to post?-->
+
+
 

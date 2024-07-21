@@ -108,9 +108,9 @@ if (!$_SESSION['isManager']){
             <span class="close">&times;</span>
             <form id="taskForm">
                 <input type="text" name="taskName" placeholder="Task Name" maxlength="32" required>
-                <input type="number" name="costEstimate" placeholder="Time Estimate, Priority, or Value" required>
-                <input type="text" name="description" placeholder="Description of the task and what is considered done" maxlength="600" required>
-                <input type="text" name="details" placeholder="Aditional Details" maxlength="500" required>
+                <input type="number" name="costEstimate" placeholder="Time Estimate, Priority, or Value">
+                <input type="text" name="description" placeholder="Description of the task and what is considered done" maxlength="600">
+                <input type="text" name="details" placeholder="Aditional Details" maxlength="500">
                 <button type="submit">Save</button>
             </form>
             <div id="formResponse"></div>
@@ -119,27 +119,38 @@ if (!$_SESSION['isManager']){
     
     <!-- This script is new and I am unused to the syntax -->
     <script>
+        // restrain function to only run when doc is loaded
         $(document).ready(function(){
+            //declare vars off of the ids above the #name syntax is grabbing things off of the id
             var modal = $('#myModal');
             var btn = $('#openModalBtn');
             var span = $('.close');
 
+            //make the openModalBtn show myModal
             btn.click(function() {
+                //jquery show
                 modal.show();
             });
 
+            //Make clicking on the x id=close close the modal
             span.click(function() {
+                //jquery hide
                 modal.hide();
             });
 
+            //Make clicking outside the modal close it clicking in the window
             $(window).click(function(event) {
                 if ($(event.target).is(modal)) {
                     modal.hide();
                 }
             });
 
+            //AJAX call using jquery
+            //Create a submit handler for the id taskForm
             $('#taskForm').submit(function(event) {
+                //turn off the normal form behavior to make it ajax instead
                 event.preventDefault();
+                //jquery AJAX call setting teh data
                 $.ajax({
                     url: 'addTask.php',
                     type: 'POST',
