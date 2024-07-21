@@ -98,8 +98,6 @@ if (!$_SESSION['isManager']){
         </div>
     </div>
 
-    <!-- Test button -->
-    <button id="openModalBtn">Create Task</button>
 
     <!-- Modal Sheet NEW CONTENT Might need to be up in the above div... not sure-->
     <div id="myModal" class="modal">
