@@ -32,6 +32,16 @@ require_once 'sani.php';
             <a class="small-link" href="logout.php">Log Out</a>
         </header>
 
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    Task Image goes here
+                </div>
+                <div class="col">
+                    Details of the Task goes here
+                </div>
+            </div>
+        </div>
         
 
 
