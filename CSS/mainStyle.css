@@ -16,9 +16,9 @@ h2 {
 
 /* h3 will be used as our subheadding font */
 h3 {
-    font-size: 24px;
+    font-size: 24px !important;
     color: #828282 !important;
-    font-weight: normal;
+    font-weight: normal !important;
 }
 
 input[type=text] , input[type=password], input[type=number]{
