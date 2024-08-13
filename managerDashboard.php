@@ -36,8 +36,8 @@ require_once 'sani.php';
 
     </header>    
 
-    <!-- Menu -->
     <div class="dash-container">
+        <!-- Menu -->
         <div class="dash-menuContainer">
             <nav class="dash-sidebar">
                 <ul class="dash-menu">
