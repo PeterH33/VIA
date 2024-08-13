@@ -27,8 +27,13 @@ require_once 'sani.php';
     </head>
 
     <body>
-        Worker Dashboard
-        <a class="small-link" href="logout.php">Logout</a>
+        <header class="dash-header">
+            <div class="site-logo">logo</div>
+            <a class="small-link" href="logout.php">Log Out</a>
+        </header>
+
+        
+
 
         <?php include 'footer.php';?>
     </body>
