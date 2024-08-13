@@ -9,6 +9,10 @@ if (!isset($_SESSION['userName'])){
 }
 
 //I feel like I need some logic to flag this as a user and check for user... but perhaps not?
+if ($_SESSION['isManager']){
+    header('Location: managerDashboard.php');
+    exit;
+}
 
 require_once 'sani.php';
 
