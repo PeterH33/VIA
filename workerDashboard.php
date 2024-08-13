@@ -49,7 +49,7 @@ require_once 'sani.php';
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="IMAGES/q1.png" class="d-block w-100" alt="...">
+                    <p>Words for the first one</p>
                 </div>
                 <div class="carousel-item">
                     <img src="IMAGES/q2.png" class="d-block w-100" alt="...">
