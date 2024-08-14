@@ -61,6 +61,7 @@ require_once 'sani.php';
                 $SQLString = "SELECT taskName, description, costEstimate FROM Tasks WHERE taskIsAssigned = 0";
                 $result = $mysqli->query($SQLString);
                 $taskCount = $result->num_rows;
+
                 if ($result->num_rows > 0){
                     while ($row = $result->fetch_assoc()){
                         echo "
@@ -105,7 +106,8 @@ require_once 'sani.php';
 
 
         <?php include 'footer.php';?>
-       <script>
+                <!-- Original version that was just one card at a time -->
+       <!-- <script>
             let slideIndex = 1;
             showSlides(slideIndex);
 
@@ -136,7 +138,42 @@ require_once 'sani.php';
                 slides[slideIndex-1].style.opacity = "1";
                 dots[slideIndex-1].className += " active";
             } 
-       </script>
+       </script> -->
+
+            <!-- New version for showing 3 at a time -->
+
+        <script>
+            let slideIndex = 0; // Start at the first slide
+
+            function showSlides(n) {
+                let slides = document.getElementsByClassName("mySlides");
+                let totalSlides = slides.length;
+
+                slideIndex += n; // Update the slideIndex based on the direction of the scroll
+                
+                if (slideIndex >= totalSlides - 2) { // Prevent scrolling beyond the last set of 3 cards
+                    slideIndex = totalSlides - 3;
+                }
+                if (slideIndex < 0) { // Prevent scrolling before the first slide
+                    slideIndex = 0;
+                }
+
+                // Update the transform to move the cards within the container
+                let slideWidth = slides[0].offsetWidth; // Get the width of a single slide
+                let newTransform = -slideIndex * slideWidth; // Calculate the new position
+
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.transform = `translateX(${newTransform}px)`; // Apply the translation
+                }
+            }
+
+            function plusSlides(n) {
+                showSlides(n); // Move one card at a time
+            }
+
+            // Initialize the first view
+            showSlides(0);
+        </script>
         
     </body>
 </html>
