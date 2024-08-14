@@ -2,14 +2,16 @@
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 100%;
+  width: 100%;
   align-items: center;
   justify-content: center;
+  display: flex;
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
+  margin: 0 auto;
 }
 
 /* Next & previous buttons */
