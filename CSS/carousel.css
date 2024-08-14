@@ -91,11 +91,13 @@
 }
 
 .taskImage{
-    width: 550px;
+    width: 33%;
+    min-width: 300;
     border-radius: 8px;
     padding: 20px;
 }
 
 .infoBox{
-    width: 500px;
+    width: 30%;
+    min-width: 280;
 }
