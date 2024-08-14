@@ -60,6 +60,7 @@ require_once 'sani.php';
                 //sql for getting remaining tasks Hmmmmm, is description a problem?
                 $SQLString = "SELECT taskName, description, costEstimate FROM Tasks WHERE taskIsAssigned = 0";
                 $result = $mysqli->query($SQLString);
+                $taskCount = $result->num_rows;
                 if ($result->num_rows > 0){
                     while ($row = $result->fetch_assoc()){
                         echo "
@@ -91,9 +92,16 @@ require_once 'sani.php';
         <!-- The dots/circles -->
         <div style="text-align:center">
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <span class="dot" onclick="currentSlide(1)"></span>
+            <?php
+                if ($taskCount > 0){
+                    for ($j = 1; $j <= $taskCount; $j++){
+                        echo"<span class='dot' onclick='currentSlide($j)'></span>";
+                    }
+                }
+            ?>
+            <!-- <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span> -->
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div> 
         
