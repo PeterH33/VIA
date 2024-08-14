@@ -3,6 +3,7 @@
 /* Slideshow container */
 .slideshow-container {
   max-width: 100%;
+  text-align: center;
 }
 
 /* Hide the images by default */
