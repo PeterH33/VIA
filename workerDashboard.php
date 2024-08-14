@@ -73,7 +73,7 @@ require_once 'sani.php';
                                 <!-- Task Details Section -->
                                 <div class="col-md-6 infoBox">
                                     <p class="taskName">' . $row["taskName"] . '</p>
-                                    <p class="taskInfo">' . $row["costEstimate"] . '</p>
+                                    <p class="taskInfo">Time Estimate: ' . $row["costEstimate"] . '</p>
                                     <p class="taskDesc">' . $row["description"] . '</p>
                                     <button class="small-link wide-link">Volunteer</button>
                                     <p class="taskDetail">' . $row["details"] . '</p>
