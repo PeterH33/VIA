@@ -44,7 +44,7 @@ require_once 'sani.php';
             </div>
         </div>
 
-        <h3>Available Tasks</h3>
+        <h4>Available Tasks</h4>
 
         <!-- Carousel goes here -->
          <!-- Slideshow container -->
