@@ -50,10 +50,10 @@ require_once 'sani.php';
          <!-- Slideshow container -->
         <div class="slideshow-container">
 
-        <!-- This is the logic that we need to spawn with our call to the database and place in a mySlides class each -->
+            <!-- This is the logic that we need to spawn with our call to the database and place in a mySlides class each -->
 
 
-        <!-- NOTE width of cards is roughly 31% of container -->
+            <!-- NOTE width of cards is roughly 31% of container -->
             <?php
                 //establish connection
                 require 'dbDash.php';
@@ -83,10 +83,8 @@ require_once 'sani.php';
                 $mysqli->close();
             ?>
 
-        <!-- Next and previous buttons -->
-            
-            
         </div>
+
         <br>
 
         <!-- The dots/circles -->
@@ -99,9 +97,6 @@ require_once 'sani.php';
                     }
                 }
             ?>
-            <!-- <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span> -->
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div> 
         
