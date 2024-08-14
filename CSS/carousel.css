@@ -38,26 +38,6 @@
   background-color: rgba(0,0,0,0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -86,22 +66,20 @@
   to {opacity: 1}
 }
 
-.slideImage {
-    border-radius: 8px;
-    float: left;
-    width: 200px;
-    padding: 10px;
+.taskInfo{
+    font-size: medium ;
+    color: #828282 ;
+    font-weight: lighter ;
 }
 
-.slideName {
-    font-size: small;
+.taskDesc{
+    font-size: small ;
+    color: #828282 ;
+    font-weight: normal ;
 }
 
-.slideDescription {
-    font-size: small;
-    color: #828282;
-}
-
-.slideCostEstimate {
-    font-size: small;
+.taskDetail{
+    font-size: smaller ;
+    color: #828282 ;
+    font-weight: normal ;
 }
