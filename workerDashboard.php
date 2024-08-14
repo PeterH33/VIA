@@ -71,7 +71,7 @@ require_once 'sani.php';
                                     <img src="ICONS/spiral.svg" alt="Task Image" class="taskImage me-3">
                                 </div>
                                 <!-- Task Details Section -->
-                                <div class="col-md-6">
+                                <div class="col-md-6 infoBox">
                                     <h2>' . $row["taskName"] . '</h2>
                                     <p class="taskInfo">' . $row["costEstimate"] . '</p>
                                     <p class="taskDesc">' . $row["description"] . '</p>

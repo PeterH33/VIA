@@ -85,6 +85,11 @@
 }
 
 .taskImage{
+    width: 550px;
     border-radius: 8px;
     padding: 20px;
+}
+
+.infoBox{
+    width: 500px;
 }
