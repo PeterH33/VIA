@@ -52,6 +52,8 @@ require_once 'sani.php';
 
         <!-- This is the logic that we need to spawn with our call to the database and place in a mySlides class each -->
 
+
+        <!-- NOTE width of cards is roughly 31% of container -->
             <?php
                 //establish connection
                 require 'dbDash.php';
@@ -63,7 +65,7 @@ require_once 'sani.php';
                         echo "
                             <div class='mySlides fade'>
                                 <div class='card' style='width: 18rem;'>
-                                    <img class='card-img-top' src='IMAGES/q1.png'>
+                                    <img class='card-img-top' src='IMAGES/spiral.svg'>
                                     <div class='card-body>
                                         <div class='slideName'>" . $row["taskName"] . "</div>
                                         <div class='slideDescription'>" . $row["description"] . "</div>
