@@ -83,3 +83,8 @@
     color: #828282 ;
     font-weight: normal ;
 }
+
+.taskImage{
+    border-radius: 8px;
+    padding: 20px;
+}
