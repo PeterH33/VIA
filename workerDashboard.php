@@ -64,7 +64,7 @@ require_once 'sani.php';
                 if ($result->num_rows > 0){
                     while ($row = $result->fetch_assoc()){
                         echo '
-                        <div class="container task-container">
+                        <div class="container mySlides fade">
                             <div class="row align-items-center">
                                 <!-- Image Section -->
                                 <div class="col-md-6">
@@ -89,9 +89,39 @@ require_once 'sani.php';
                 $mysqli->close();
             ?>
 
+            <!-- OLD -->
+            <?php
+                // //establish connection
+                // require 'dbDash.php';
+                // //sql for getting remaining tasks Hmmmmm, is description a problem?
+                // $SQLString = "SELECT taskName, description, costEstimate, details FROM Tasks WHERE taskIsAssigned = 0";
+                // $result = $mysqli->query($SQLString);
+                // $taskCount = $result->num_rows;
+                // if ($result->num_rows > 0){
+                //     while ($row = $result->fetch_assoc()){
+                //         echo "
+                //             <div class='mySlides fade'>
+                //                 <div class='card' style='width: 18rem;'>
+                //                     <img class='card-img-top' src='ICONS/spiral.svg'>
+                //                     <div class='card-body'>
+                //                         <div class='slideName'>" . $row["taskName"] . "</div>
+                //                         <div class='slideDescription'>" . $row["description"] . "</div>
+                //                         <div class='slideCostEstimate'>" . $row["costEstimate"] . "</div>
+                //                     </div>
+                //                 </div>
+                //             </div>
+                //         ";
+                //     }
+                    
+                // } else {
+                //     echo "<h3>No unassigned tasks</h3>";
+                // }
+                // $mysqli->close();
+            ?>
+
         </div>
 
-
+        
 
 
         <br>
