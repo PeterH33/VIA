@@ -68,7 +68,7 @@ require_once 'sani.php';
                             <div class="row align-items-center">
                                 <!-- Image Section -->
                                 <div class="col-md-6">
-                                    <img src="ICONS/spiral.svg" alt="Task Image" class="img-fluid task-image">
+                                    <img src="ICONS/spiral.svg" alt="Task Image" class="taskImage me-3">
                                 </div>
                                 <!-- Task Details Section -->
                                 <div class="col-md-6">
