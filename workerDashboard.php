@@ -65,7 +65,7 @@ require_once 'sani.php';
                         echo "
                             <div class='mySlides fade'>
                                 <div class='card' style='width: 18rem;'>
-                                    <img class='card-img-top' src='IMAGES/spiral.svg'>
+                                    <img class='card-img-top' src='ICONS/spiral.svg'>
                                     <div class='card-body>
                                         <div class='slideName'>" . $row["taskName"] . "</div>
                                         <div class='slideDescription'>" . $row["description"] . "</div>
