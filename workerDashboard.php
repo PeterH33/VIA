@@ -65,7 +65,7 @@ require_once 'sani.php';
                     while ($row = $result->fetch_assoc()){
                         echo '
                         <div class="container mySlides fade">
-                            <div class="row justify-content-around">
+                            <div class="row align-items-center justify-content-between">
                                 <!-- Image Section -->
                                 <div class="col-md-6">
                                     <img src="ICONS/spiral.svg" alt="Task Image" class="taskImage me-3">
