@@ -58,23 +58,29 @@ require_once 'sani.php';
                 //establish connection
                 require 'dbDash.php';
                 //sql for getting remaining tasks Hmmmmm, is description a problem?
-                $SQLString = "SELECT taskName, description, costEstimate FROM Tasks WHERE taskIsAssigned = 0";
+                $SQLString = "SELECT taskName, description, costEstimate, details FROM Tasks WHERE taskIsAssigned = 0";
                 $result = $mysqli->query($SQLString);
                 $taskCount = $result->num_rows;
                 if ($result->num_rows > 0){
                     while ($row = $result->fetch_assoc()){
-                        echo "
-                            <div class='mySlides fade'>
-                                <div class='card' style='width: 18rem;'>
-                                    <img class='card-img-top' src='ICONS/spiral.svg'>
-                                    <div class='card-body'>
-                                        <div class='slideName'>" . $row["taskName"] . "</div>
-                                        <div class='slideDescription'>" . $row["description"] . "</div>
-                                        <div class='slideCostEstimate'>" . $row["costEstimate"] . "</div>
-                                    </div>
+                        echo '
+                        <div class="container task-container">
+                            <div class="row align-items-center">
+                                <!-- Image Section -->
+                                <div class="col-md-6">
+                                    <img src="ICONS/spiral.svg" alt="Task Image" class="img-fluid task-image">
+                                </div>
+                                <!-- Task Details Section -->
+                                <div class="col-md-6">
+                                    <h1>' . $row["taskName"] . '</h1>
+                                    <p class="task-info">' . $row["costEstimate"] . '</p>
+                                    <p class="task-desc">' . $row["description"] . '</p>
+                                    <button class="btn btn-dark">Voulenteer</button>
+                                    <p class="task-extra">' . $row["details"] . '</p>
                                 </div>
                             </div>
-                        ";
+                        </div>
+                        ';
                     }
                     
                 } else {
@@ -84,6 +90,9 @@ require_once 'sani.php';
             ?>
 
         </div>
+
+
+
 
         <br>
 
