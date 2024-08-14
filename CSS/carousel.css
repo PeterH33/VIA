@@ -86,3 +86,23 @@
   from {opacity: .4}
   to {opacity: 1}
 }
+
+.slideImage {
+    border-radius: 8px;
+    float: left;
+    width: 200px;
+    padding: 10px;
+}
+
+.slideName {
+    font-size: small;
+}
+
+.slideDescription {
+    font-size: small;
+    color: #828282;
+}
+
+.slideCostEstimate {
+    font-size: small;
+}

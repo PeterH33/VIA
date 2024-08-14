@@ -50,7 +50,32 @@ require_once 'sani.php';
          <!-- Slideshow container -->
         <div class="slideshow-container">
 
-        <!-- Full-width images with number and caption text -->
+        <!-- This is the logic that we need to spawn with our call to the database and place in a mySlides class each -->
+
+            <?php
+                //establish connection
+                require 'dbDash.php';
+                //sql for getting remaining tasks Hmmmmm, is description a problem?
+                $SQLString = "SELECT taskName, description, costEstimate FROM Tasks WHERE taskIsAssigned = 0";
+                $result = $mysqli->query($SQLString);
+                if ($result->num_rows > 0){
+                    while ($row = $result->fetch_assoc()){
+                        echo "
+                            <div class="mySlides fade">
+                                <img class="slideImage" src="IMAGES/q1.png">
+                                <div class="slideName">" . $row["taskName"] . "</div>
+                                <div class="slideDescription">" . $row["description"] . "</div>
+                                <div class="slideCostEstimate">" . $row["costEstimate"] . "</div>
+                            </div>
+                        ";
+                    }
+                    
+                } else {
+                    echo "<h3>No unassigned tasks</h3>";
+                }
+                $mysqli->close();
+            ?>
+
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
                 <img src="IMAGES/q1.png" style="width:100%">
@@ -77,6 +102,7 @@ require_once 'sani.php';
 
         <!-- The dots/circles -->
         <div style="text-align:center">
+
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
             <span class="dot" onclick="currentSlide(3)"></span>
