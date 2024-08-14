@@ -62,10 +62,14 @@ require_once 'sani.php';
                     while ($row = $result->fetch_assoc()){
                         echo "
                             <div class='mySlides fade'>
-                                <img class='slideImage' src='IMAGES/q1.png'>
-                                <div class='slideName'>" . $row["taskName"] . "</div>
-                                <div class='slideDescription'>" . $row["description"] . "</div>
-                                <div class='slideCostEstimate'>" . $row["costEstimate"] . "</div>
+                                <div class='card' style='width: 18rem;'>
+                                    <img class='card-img-top' src='IMAGES/q1.png'>
+                                    <div class='card-body>
+                                        <div class='slideName'>" . $row["taskName"] . "</div>
+                                        <div class='slideDescription'>" . $row["description"] . "</div>
+                                        <div class='slideCostEstimate'>" . $row["costEstimate"] . "</div>
+                                    </div>
+                                </div>
                             </div>
                         ";
                     }
