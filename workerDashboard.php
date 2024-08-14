@@ -33,86 +33,76 @@ require_once 'sani.php';
             <a class="small-link" href="logout.php">Log Out</a>
         </header>
 
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    Task Image goes here
-                </div>
-                <div class="col">
-                    Details of the Task goes here
-                </div>
-            </div>
-        </div>
-
-        <h4>Available Tasks</h4>
-
-        <!-- Carousel goes here -->
-         <!-- Slideshow container -->
-        <div class="slideshow-container">
-
-            <!-- This is the logic that we need to spawn with our call to the database and place in a mySlides class each -->
-
-
-            <!-- NOTE width of cards is roughly 31% of container -->
-            <?php
-                //establish connection
-                require 'dbDash.php';
-                //sql for getting remaining tasks Hmmmmm, is description a problem?
-                $SQLString = "SELECT taskName, description, costEstimate, details FROM Tasks WHERE taskIsAssigned = 0";
-                $result = $mysqli->query($SQLString);
-                $taskCount = $result->num_rows;
-                if ($result->num_rows > 0){
-                    while ($row = $result->fetch_assoc()){
-                        echo '
-                        <div class="container mySlides fade">
-                            <div class="row align-items-center justify-content-between">
-                                <!-- Image Section -->
-                                <div class="col-md-6">
-                                    <img src="ICONS/spiral.svg" alt="Task Image" class="taskImage me-3">
-                                </div>
-                                <!-- Task Details Section -->
-                                <div class="col-md-6 infoBox">
-                                    <p class="taskName">' . $row["taskName"] . '</p>
-                                    <p class="taskInfo">Time Estimate: ' . $row["costEstimate"] . '</p>
-                                    <p class="taskDesc">' . $row["description"] . '</p>
-                                    <button class="small-link wide-link">Volunteer</button>
-                                    <p class="taskDetail">' . $row["details"] . '</p>
+        
+        <div class="workerDash">
+            <!-- Carousel goes here -->
+             <!-- Slideshow container -->
+            <div class="slideshow-container">
+    
+                <!-- This is the logic that we need to spawn with our call to the database and place in a mySlides class each -->
+    
+    
+                <!-- NOTE width of cards is roughly 31% of container -->
+                <?php
+                    //establish connection
+                    require 'dbDash.php';
+                    //sql for getting remaining tasks Hmmmmm, is description a problem?
+                    $SQLString = "SELECT taskName, description, costEstimate, details FROM Tasks WHERE taskIsAssigned = 0";
+                    $result = $mysqli->query($SQLString);
+                    $taskCount = $result->num_rows;
+                    if ($result->num_rows > 0){
+                        while ($row = $result->fetch_assoc()){
+                            echo '
+                            <div class="container mySlides fade">
+                                <div class="row align-items-center justify-content-between">
+                                    <!-- Image Section -->
+                                    <div class="col-md-6">
+                                        <img src="ICONS/spiral.svg" alt="Task Image" class="taskImage me-3">
+                                    </div>
+                                    <!-- Task Details Section -->
+                                    <div class="col-md-6 infoBox">
+                                        <p class="taskName">' . $row["taskName"] . '</p>
+                                        <p class="taskInfo">Time Estimate: ' . $row["costEstimate"] . '</p>
+                                        <p class="taskDesc">' . $row["description"] . '</p>
+                                        <button class="small-link wide-link">Volunteer</button>
+                                        <p class="taskDetail">' . $row["details"] . '</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        ';
+                            ';
+                        }
+                        
+                    } else {
+                        echo "<h3>No unassigned tasks</h3>";
                     }
-                    
-                } else {
-                    echo "<h3>No unassigned tasks</h3>";
-                }
-                $mysqli->close();
-            ?>
+                    $mysqli->close();
+                ?>
+    
+            </div>
+    
+            <br>
+    
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <?php
+                    if ($taskCount > 0){
+                        for ($j = 1; $j <= $taskCount; $j++){
+                            echo"<span class='dot' onclick='currentSlide($j)'></span>";
+                        }
+                    }
+                ?>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div> 
 
         </div>
-
-        <br>
-
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <?php
-                if ($taskCount > 0){
-                    for ($j = 1; $j <= $taskCount; $j++){
-                        echo"<span class='dot' onclick='currentSlide($j)'></span>";
-                    }
-                }
-            ?>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div> 
         
-
-        <!-- I need to fetch all of the current tasks and put them up as cards -->
-
 
         <?php include 'footer.php';?>
 
-       <script>
+
+
+        <script>
             let slideIndex = 1;
             showSlides(slideIndex);
 

@@ -91,13 +91,16 @@
 }
 
 .taskImage{
-    width: 33%;
-    min-width: 300;
+    width: 550px;
     border-radius: 8px;
     padding: 20px;
 }
 
 .infoBox{
-    width: 30%;
-    min-width: 280;
+    width: 500px;
+}
+
+.workerDash{
+    margin-top: 150px;
+    margin-bottom: 120px;
 }
