@@ -4,6 +4,7 @@
 .slideshow-container {
   max-width: 100%;
   align-items: center;
+  justify-content: center;
 }
 
 /* Hide the images by default */
