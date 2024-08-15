@@ -34,7 +34,13 @@ require_once 'sani.php';
             <a class="small-link" href="logout.php">Log Out</a>
         </header>
 
-        
+        <!-- This is a hard code test of the assignTask.php file -->
+        <form action="assignTask.php" method="POST">
+            <input type="hidden" name="taskId" value="3">
+            <button type="submit">Send Task 3</button>
+        </form>
+
+
         <div class="workerDash">
             <!-- Carousel goes here -->
              <!-- Slideshow container -->
