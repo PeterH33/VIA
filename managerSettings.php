@@ -48,6 +48,7 @@ if (!$_SESSION['isManager']){
         <!-- Window content -->
         <div class="dash-mainContent">
             <a href="runphppytest.html">This is a test button to access python test</a>
+            <br>
             <a href="taskAssignAI.php">Test of the JSON compile of a query</a>
         </div>
 
