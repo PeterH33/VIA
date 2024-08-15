@@ -26,6 +26,8 @@ if ($result->num_rows > 0){
 
     $jsonData = json_encode($taskData);
 
+    require 'taskAI.php';
+    
     echo $jsonData;
 }
 

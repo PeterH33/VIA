@@ -95,6 +95,10 @@ if (!$_SESSION['isManager']){
                 }
                 $mysqli->close();
             ?>
+            <br>
+            <hr>
+            <!-- This is where we will call our AI -->
+            <a href="taskAssignAI.php">Click for AI recommendation</a>
         </div>
     </div>
 
