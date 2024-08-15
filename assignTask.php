@@ -31,7 +31,7 @@ if($taskId){
         if ($stmt->execute()){
             echo "assignment voulenteer successful";
         } else {
-            echo "assignment failure"
+            echo "assignment failure";
         }
         $stmt->close();
     } else {
