@@ -152,17 +152,15 @@ require_once 'sani.php';
                         type: "POST",
                         data: {taskId: taskId},
                         success: function(response){
-                            var result = JSON.parse(response);
-                            if (result.status === 'success'){
+                            setTimeout(function() {
                                 //on success change the buttons appearance... I think there is a better place for this logic
                                 button.css('background-color', 'green');
                                 button.text('Volunteered');
                                 button.prop('disabled', true);
+                                
+                            }, 2000);
 
-                            } else {
-                            //This should just give us the error as a jquery popup
-                            alert(result.message);
-                            } 
+                            
                         },
                         error: function(){
                             alert("Error occurred while assigning task, ajax did not return success.")
