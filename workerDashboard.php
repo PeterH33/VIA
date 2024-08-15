@@ -25,6 +25,7 @@ require_once 'sani.php';
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="CSS/mainStyle.css">
         <link rel="stylesheet" href="CSS/carousel.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -41,13 +42,12 @@ require_once 'sani.php';
     
                 <!-- This is the logic that we need to spawn with our call to the database and place in a mySlides class each -->
     
-    
-                <!-- NOTE width of cards is roughly 31% of container -->
                 <?php
+                // CAUTION: The button line in here looks like a potential problem, so many in and outs of string
                     //establish connection
                     require 'dbDash.php';
                     //sql for getting remaining tasks Hmmmmm, is description a problem?
-                    $SQLString = "SELECT taskName, description, costEstimate, details FROM Tasks WHERE taskIsAssigned = 0";
+                    $SQLString = "SELECT taskId, taskName, description, costEstimate, details FROM Tasks WHERE taskIsAssigned = 0";
                     $result = $mysqli->query($SQLString);
                     $taskCount = $result->num_rows;
                     if ($result->num_rows > 0){
@@ -64,7 +64,7 @@ require_once 'sani.php';
                                         <p class="taskName">' . $row["taskName"] . '</p>
                                         <p class="taskInfo">Time Estimate: ' . $row["costEstimate"] . '</p>
                                         <p class="taskDesc">' . $row["description"] . '</p>
-                                        <button class="small-link wide-link">Volunteer</button>
+                                        <button class="small-link wide-link volunteer-btn" data-task-id="<?php echo ' . $row["taskId"] . '; ?>">Volunteer</button>
                                         <p class="taskDetail">' . $row["details"] . '</p>
                                     </div>
                                 </div>
@@ -133,6 +133,38 @@ require_once 'sani.php';
                 slides[slideIndex-1].style.opacity = "1";
                 dots[slideIndex-1].className += " active";
             } 
+
+            
+            //Using jquery for the ajax call because it is so much cleaner than xml, unsure of the safest route here.
+            $(document).ready(function(){
+                $('.volunteer-btn').click(function(){
+                    var button = $(this); //get button ref
+                    var taskId = button.data('task-id'); //get the value up in the button data-task-id="" might cause issue with the syntax being used
+
+                    $.ajax({
+                        url: 'assignTask.php',
+                        type: "POST",
+                        data: {taskId: taskId},
+                        success: function(response){
+                            var result = JSON.parse(response);
+                            if (result.status === 'success'){
+                                //on success change the buttons appearance... I think there is a better place for this logic
+                                button.css('background-color', 'green');
+                                button.text('Volunteered');
+                                button.prop('disabled', true);
+
+                            } else {
+                            //This should just give us the error as a jquery popup
+                            alert(result.message);
+                            } 
+                        },
+                        error: function(){
+                            alert("Error occurred while assigning task, ajax did not return success.")
+                        }
+
+                    });
+                });
+            });
        </script>
 
        
