@@ -32,21 +32,26 @@ if (!$_SESSION['isManager']){
         <a class="small-link" href="logout.php">Log Out</a>
 
     </header>    
+    <div class="dash-container">
+        <!-- Menu -->
+        <div class="dash-menuContainer">
+            <nav class="dash-sidebar">
+                <ul class="dash-menu">
+                    <li><a href="managerDashboard.php"><img src="ICONS/home.svg" alt="Home Icon" class="dash-icon">VIA Round</a></li>
+                    <li><a href="managerTaskList.php"><img src="ICONS/plus.svg" alt="Task Icon" class="dash-icon"> Task List</a></li>
+                    <li><a href="managerWorkers.php"><img src="ICONS/person.svg" alt="Worker Icon" class="dash-icon">Workers</a></li>
+                    <li><a href="managerSettings.php"><img src="ICONS/gear.svg" alt="Settings Icon" class="dash-icon">Settings</a></li>
+                </ul>
+            </nav>
+        </div>
 
-    <!-- Menu -->
-    <div class="dash-menuContainer">
-        <nav class="dash-sidebar">
-            <ul class="dash-menu">
-                <li><a href="managerDashboard.php"><img src="ICONS/home.svg" alt="Home Icon" class="dash-icon">VIA Round</a></li>
-                <li><a href="managerTaskList.php"><img src="ICONS/plus.svg" alt="Task Icon" class="dash-icon"> Task List</a></li>
-                <li><a href="managerWorkers.php"><img src="ICONS/person.svg" alt="Worker Icon" class="dash-icon">Workers</a></li>
-                <li><a href="managerSettings.php"><img src="ICONS/gear.svg" alt="Settings Icon" class="dash-icon">Settings</a></li>
-            </ul>
-        </nav>
+        <!-- Window content -->
+        <div class="dash-mainContent">
+            <a href="runphppytest.html">This is a test button to access python test</a>
+        </div>
+
     </div>
 
-    <main>
-
-    </main>
+    
 </body>
 </html>

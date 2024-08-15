@@ -16,6 +16,8 @@ if ($_SESSION['isManager']){
 
 require_once 'sani.php';
 
+//TODO: The buttons need to initialize tracking the status of the user and if they have volunteered, and you should be able to hit the button as a toggle
+//Futhermore, there is a delay on setting the value, so it should have a progress animation
 ?>
 
 <!DOCTYPE html>
