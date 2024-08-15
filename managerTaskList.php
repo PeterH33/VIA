@@ -98,7 +98,8 @@ if (!$_SESSION['isManager']){
             <br>
             <hr>
             <!-- This is where we will call our AI -->
-            <a href="taskAssignAI.php">Click for AI recommendation</a>
+            <a href="#" id="taskAssignAIBtn">Click for AI recomended task assignment</a>
+            <div id="aiResponse"></div>
         </div>
     </div>
 
@@ -171,6 +172,23 @@ if (!$_SESSION['isManager']){
                 });
             });
         });
+
+        $(document).ready(function(){
+            $('#taskAssignAIBtn').click(function(event){
+                event.preventDefault();
+                $.ajax({
+                    url: 'taskAssignAI.php',
+                    type:'GET',
+                    success: function(response){
+                        $('#aiResponse').html(response);
+                    },
+                    error: function(){
+                        $('#aiResponse').html('Error loading AI recommendation.');
+                    }
+                });
+            });
+        });
+
     </script>
 
 </body>
