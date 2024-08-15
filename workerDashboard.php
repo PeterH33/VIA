@@ -64,7 +64,7 @@ require_once 'sani.php';
                                         <p class="taskName">' . $row["taskName"] . '</p>
                                         <p class="taskInfo">Time Estimate: ' . $row["costEstimate"] . '</p>
                                         <p class="taskDesc">' . $row["description"] . '</p>
-                                        <button class="small-link wide-link volunteer-btn" data-task-id="<?php echo ' . $row["taskId"] . '; ?>">Volunteer</button>
+                                        <button class="small-link wide-link volunteer-btn" data-task-id="' . $row["taskId"] . '">Volunteer</button>
                                         <p class="taskDetail">' . $row["details"] . '</p>
                                     </div>
                                 </div>
