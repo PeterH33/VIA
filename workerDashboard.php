@@ -69,6 +69,7 @@ require_once 'sani.php';
                                         <p class="taskInfo">Time Estimate: ' . $row["costEstimate"] . '</p>
                                         <p class="taskDesc">' . $row["description"] . '</p>
                                         <button class="small-link wide-link volunteer-btn" data-task-id="' . $row["taskId"] . '">Volunteer</button>
+                                        <div id="loading"></div>
                                         <p class="taskDetail">' . $row["details"] . '</p>
                                     </div>
                                 </div>
@@ -144,6 +145,12 @@ require_once 'sani.php';
                 $('.volunteer-btn').click(function(){
                     var button = $(this); //get button ref
                     var taskId = button.data('task-id'); //get the value up in the button data-task-id="" might cause issue with the syntax being used
+                    
+                    //disable button
+                    button.prop('disabled', true);
+
+                    //spawn loader in the loading div
+                    $('#loading').html('<div class="loader"></div>');
 
                     $.ajax({
                         url: 'assignTask.php',
@@ -154,14 +161,18 @@ require_once 'sani.php';
                                 //on success change the buttons appearance... I think there is a better place for this logic
                                 button.css('background-color', 'green');
                                 button.text('Volunteered');
-                                button.prop('disabled', true);
+                                
                                 
                             }, 2000);
 
                             
                         },
                         error: function(){
+                            button.prop('disabled', false);
                             alert("Error occurred while assigning task, ajax did not return success.")
+                        },
+                        complete: function(){
+                            $('#loading').html('');
                         }
 
                     });

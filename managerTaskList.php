@@ -181,7 +181,7 @@ if (!$_SESSION['isManager']){
                 $('#taskAssignAIBtn').prop('disabled', true).css('pointer-events', 'none');
 
                 //spawn loading anim
-                $('#aiResponse').html('<div class="loader">Loading</div>');
+                $('#aiResponse').html('<div class="loader"></div>');
 
                 $.ajax({
                     url: 'taskAssignAI.php',
