@@ -161,7 +161,7 @@ require_once 'sani.php';
                                 //on success change the buttons appearance... I think there is a better place for this logic
                                 button.css('background-color', 'green');
                                 button.text('Volunteered');
-                                
+                                $('#loading').html('');
                                 
                             }, 2000);
 
@@ -170,8 +170,6 @@ require_once 'sani.php';
                         error: function(){
                             button.prop('disabled', false);
                             alert("Error occurred while assigning task, ajax did not return success.")
-                        },
-                        complete: function(){
                             $('#loading').html('');
                         }
 
