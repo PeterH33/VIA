@@ -176,14 +176,23 @@ if (!$_SESSION['isManager']){
         $(document).ready(function(){
             $('#taskAssignAIBtn').click(function(event){
                 event.preventDefault();
+
+                //disable button while loading
+                $('#taskAssignAIBtn').prop('disabled', true).css('pointer-events', 'none');
+
+                //spawn loading anim
+                $('#aiResponse').html('<div class="loader">Loading</div>');
+
                 $.ajax({
                     url: 'taskAssignAI.php',
                     type:'GET',
                     success: function(response){
                         $('#aiResponse').html(response);
+                        $('#taskAssignAIBtn').prop('disabled', false).css('pointer-events', 'auto');
                     },
                     error: function(){
                         $('#aiResponse').html('Error loading AI recommendation.');
+                        $('#taskAssignAIBtn').prop('disabled', false).css('pointer-events', 'auto');
                     }
                 });
             });
