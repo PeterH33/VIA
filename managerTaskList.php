@@ -52,7 +52,7 @@ if (!$_SESSION['isManager']){
             <!-- Search bar kind of a header and add task button -->
             <div><h2>Tasks</h2></div>
             <div class="dash-header">
-                <h3>Search bar</h3>
+                <input type="text" placeholder="Search Tasks" id="searchInput">
                 <button id="openModalBtn">Create Task</button>
             </div>
             <!-- The task table goes here -->
@@ -221,6 +221,17 @@ if (!$_SESSION['isManager']){
                         $('#aiResponse').html('Error loading AI recommendation.');
                         $('#taskAssignAIBtn').prop('disabled', false).css('pointer-events', 'auto');
                     }
+                });
+            });
+        });
+
+        //JS for the serch filter I dont know about this logic yet... gpt suggestion that I can see might work...
+        $(document).ready(function(){
+            $('#searchInput').on('keyup', function(){
+                var target = $(this).val().toLowerCase();
+
+                $('.tasks-table tbody tr').filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(target) > -1);
                 });
             });
         });
