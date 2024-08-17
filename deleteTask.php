@@ -4,14 +4,15 @@ if (isset($_POST['taskId'])) {
     $taskId = $_POST['taskId'];
     
     //Having this call second caused issues, lets see if it works if it goes first?
+    //Neat! totally works, so you need to delete aoociative tables first and then delete primary tables
     $SQLString = "DELETE FROM assignments WHERE taskId = ?";
     $stmt = $mysqli->prepare($SQLString);
     $stmt->bind_param('i', $taskId);
     
     if ($stmt->execute()) {
-        echo "Task deleted successfully";
+        echo "Task deleted successfully from assignments. ";
     } else {
-        echo "Error deleting task";
+        echo "Error deleting task from assignments. ";
     }
     
     $stmt->close();
@@ -22,9 +23,9 @@ if (isset($_POST['taskId'])) {
     $stmt->bind_param('i', $taskId);
     
     if ($stmt->execute()) {
-        echo "Task deleted successfully";
+        echo "Task deleted successfully from task list.";
     } else {
-        echo "Error deleting task";
+        echo "Error deleting task from tasks. ";
     }
     
     $stmt->close();
@@ -32,6 +33,6 @@ if (isset($_POST['taskId'])) {
 
     $mysqli->close();
 } else {
-    echo "Task ID not provided";
+    echo "Task ID not provided. ";
 }
 ?>
