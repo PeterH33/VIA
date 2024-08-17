@@ -48,7 +48,7 @@ if (!$_SESSION['isManager']){
         <!-- Window content -->
         <div class="dash-mainContent">
             
-        
+            <p>There are currently no available settings.</p>
             
         </div>
 

@@ -53,15 +53,13 @@ if (!$_SESSION['isManager']){
             <div><h2>Tasks</h2></div>
             <div class="dash-header">
                 <h3>Search bar</h3>
-                <!-- NEW CONTENT logic for button and modal sheet -->
-                <!-- <a class="dash-plusButton" href="addTask.php">+</a> -->
-                <!-- Test button -->
                 <button id="openModalBtn">Create Task</button>
             </div>
             <!-- The task table goes here -->
             <?php
                 require 'dbDash.php';
-                $SQLString = "SELECT t.taskName, t.costEstimate, u.userName
+                //NEW grab of the taskId this should work
+                $SQLString = "SELECT t.taskId, t.taskName, t.costEstimate, u.userName
                     FROM tasks t
                     LEFT JOIN assignments a ON t.taskId = a.taskId
                     LEFT JOIN users u ON a.userId = u.userId
@@ -86,7 +84,11 @@ if (!$_SESSION['isManager']){
                                 <td>" . htmlspecialchars($row["taskName"]) . "</td>
                                 <td>" . htmlspecialchars($row["costEstimate"]) . "</td>
                                 <td>" . htmlspecialchars($row["userName"]) . "</td>
-                                <td>...</td>
+                                <td>
+                                    <button class='btn btn-danger delete-task' data-task-id='" . htmlspecialchars($row["taskId"]) . "'>
+                                    Delete
+                                    </button>
+                                </td>
                             </tr>
                         ";
                     }
@@ -173,6 +175,31 @@ if (!$_SESSION['isManager']){
             });
         });
 
+        //Showing different ways to reference something for a button function effect, this one through class
+        //Button for calling delete a task, how do people organize all this in a dev setting?
+        $(document).ready(function(){
+            $('.delete-task').click(function(){
+                var taskId = $(this).data('task-id');
+                //lets see if this will work to just pop up a confirmation box
+                var confirmed = confirm('Are you sure you want to delete this task?');
+                if (confirmed) {
+                    $.ajax({
+                        url: 'deleteTask.php',  // The PHP script to handle deletion
+                        type: 'POST',
+                        data: { taskId: taskId },
+                        success: function(response) {
+                            alert(response);  // Optional: Show success message
+                            location.reload();  // Reload the page after deletion
+                        },
+                        error: function() {
+                            alert('Error deleting task.');
+                        }
+                    });
+                }
+            });
+        });
+
+        //This one through an a href link that has an ID attached. Id is probably the better way so that you dont wind up messing with the css in the classes
         $(document).ready(function(){
             $('#taskAssignAIBtn').click(function(event){
                 event.preventDefault();
