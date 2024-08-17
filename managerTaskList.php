@@ -72,7 +72,7 @@ if (!$_SESSION['isManager']){
                             <tr>
                                 <th>Title</th>
                                 <th>Time / Value</th>
-                                <th>Assigned Worker</th>
+                                <th>Assigned / Volunteering Worker</th>
                                 <th>Delete Task</th>
                             </tr>
                         </thead>
