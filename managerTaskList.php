@@ -52,7 +52,7 @@ if (!$_SESSION['isManager']){
             <!-- Search bar kind of a header and add task button -->
             <div><h2>Tasks</h2></div>
             <div class="dash-header">
-                <input type="text" placeholder="Search Tasks" id="searchInput">
+                <input type="text" placeholder="Search Tasks" id="searchInput" class="taskList-searchBar">
                 <button id="openModalBtn">Create Task</button>
             </div>
             <!-- The task table goes here -->
@@ -225,7 +225,7 @@ if (!$_SESSION['isManager']){
             });
         });
 
-        //JS for the serch filter I dont know about this logic yet... gpt suggestion that I can see might work...
+        //JS for the serch filter This is super responsive! Gotta note down this logic, gpt suggestion
         $(document).ready(function(){
             $('#searchInput').on('keyup', function(){
                 var target = $(this).val().toLowerCase();
