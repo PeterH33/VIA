@@ -255,5 +255,5 @@ table, th, td {
 }
 
 .taskList-searchBar{
-    width: 50%;
+    width: 50% !important;
 }
